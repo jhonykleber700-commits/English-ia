@@ -177,7 +177,11 @@ export default function VoiceTutor() {
         pc.addTrack(track, stream);
       });
 
-      const offer = await pc.createOffer();      if (pc.iceGatheringState !== 'complete') {
+            const offer = await pc.createOffer();
+
+      await pc.setLocalDescription(offer);
+
+      if (pc.iceGatheringState !== 'complete') {
         await new Promise(resolve => {
           let finished = false;
 
@@ -191,7 +195,7 @@ export default function VoiceTutor() {
               checkState
             );
 
-            sdp: localSdp
+            resolve();
           };
 
           const checkState = () => {
@@ -218,8 +222,6 @@ export default function VoiceTutor() {
         );
       }
 
-      await pc.setLocalDescription(offer);
-
       const response = await fetch(
         '/api/voice-session',
         {
@@ -230,11 +232,10 @@ export default function VoiceTutor() {
           },
 
           body: JSON.stringify({
-            sdp: offer.sdp
+            sdp: localSdp
           })
         }
       );
-
       const data = await response.json();
 
       if (!response.ok) {
