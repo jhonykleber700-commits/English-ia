@@ -461,3 +461,115 @@ function App() {
 
                   <small>
                     {item[1]}
+                              </small>
+
+                </span>
+
+                <strong>
+                  ›
+                </strong>
+
+              </button>
+
+            ))}
+
+          </div>
+
+        </section>
+      )}
+
+      {tab === 'profile' && (
+
+        <section className="profilePage">
+
+          <small>
+            SEU PROGRESSO
+          </small>
+
+          <h1>
+            Perfil
+          </h1>
+
+          <div className="stats">
+
+            <div>
+              <b>{xp}</b>
+              <span>XP total</span>
+            </div>
+
+            <div>
+              <b>1</b>
+              <span>dia seguido</span>
+            </div>
+
+            <div>
+              <b>
+                {lesson + 1}/{lessons.length}
+              </b>
+
+              <span>
+                lição atual
+              </span>
+            </div>
+
+          </div>
+
+          <section className="quick">
+
+            <h3>
+              Meta atual
+            </h3>
+
+            <p>
+              Aprender inglês para conversas,
+              trabalho e entrevistas no exterior.
+            </p>
+
+          </section>
+
+        </section>
+      )}
+
+      <nav>
+
+        <button
+          className={tab === 'home' ? 'active' : ''}
+          onClick={() => setTab('home')}
+        >
+          🏠
+          <small>Início</small>
+        </button>
+
+        <button
+          className={tab === 'practice' ? 'active' : ''}
+          onClick={openPractice}
+        >
+          💬
+          <small>Praticar</small>
+        </button>
+
+        <button
+          className={tab === 'lessons' ? 'active' : ''}
+          onClick={() => setTab('lessons')}
+        >
+          📚
+          <small>Lições</small>
+        </button>
+
+        <button
+          className={tab === 'profile' ? 'active' : ''}
+          onClick={() => setTab('profile')}
+        >
+          👤
+          <small>Perfil</small>
+        </button>
+
+      </nav>
+
+    </main>
+  );
+}
+
+createRoot(
+  document.getElementById('root')
+).render(<App />);
