@@ -200,7 +200,8 @@ export default function VoiceTutor() {
 
       if (!response.ok) {
         throw new Error(
-          data?.error ||
+          data?.error?.message ||
+data?.error ||
           'Não foi possível criar a sessão de voz.'
         );
       }
