@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
-
+import VoiceTutor from './VoiceTutor.jsx';
 const lessons = [
   ['Cumprimentos', 'Good morning! How are you?', 'Bom dia! Como você está?'],
   ['Apresentação', "Hi, I'm Jhony. Nice to meet you.", 'Olá, eu sou Jhony. Prazer em conhecer você.'],
@@ -565,7 +565,7 @@ function App() {
         </button>
 
       </nav>
-
+<VoiceTutor />
     </main>
   );
 }
