@@ -605,4 +605,88 @@ const styles = {
 
     maxWidth: '88%',
 
-    padding: '
+        padding: '12px 14px',
+
+    background: '#35d3aa',
+
+    color: '#06271f',
+
+    borderRadius:
+      '16px 16px 4px 16px'
+  },
+
+  aiTranscript: {
+    alignSelf: 'flex-start',
+
+    maxWidth: '88%',
+
+    padding: '12px 14px',
+
+    background: '#142b43',
+
+    border:
+      '1px solid #31506d',
+
+    borderRadius:
+      '16px 16px 16px 4px'
+  },
+
+  aiName: {
+    color: '#66e3c4'
+  },
+
+  text: {
+    margin: '5px 0 0',
+    lineHeight: 1.45
+  },
+
+  error: {
+    marginBottom: '15px',
+
+    padding: '12px',
+
+    background:
+      'rgba(190,60,70,.15)',
+
+    border:
+      '1px solid rgba(230,90,100,.4)',
+
+    borderRadius: '12px',
+
+    color: '#ffc1c7'
+  },
+
+  startButton: {
+    width: '100%',
+
+    marginTop: '8px',
+
+    padding: '17px',
+
+    border: 0,
+    borderRadius: '15px',
+
+    background: '#35d3aa',
+    color: '#05231d',
+
+    fontWeight: 800
+  },
+
+  endButton: {
+    width: '100%',
+
+    marginTop: '8px',
+
+    padding: '17px',
+
+    border:
+      '1px solid #a54755',
+
+    borderRadius: '15px',
+
+    background: '#5e2832',
+    color: '#fff',
+
+    fontWeight: 800
+  }
+};
