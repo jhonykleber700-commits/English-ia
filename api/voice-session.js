@@ -56,18 +56,9 @@ Regras:
 - Incentive o aluno a falar inglês.
 
 Comporte-se como um professor de inglês em uma conversa real.
-            `.trim(),
+            `.trim()
 
-            audio: {
-              input: {
-                turn_detection: {
-                  type: 'semantic_vad',
-                  eagerness: 'medium',
-                  create_response: true,
-                  interrupt_response: true
-                }
-              }
-            }
+          
           },
 
           transport: {
