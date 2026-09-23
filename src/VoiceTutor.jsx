@@ -177,7 +177,46 @@ export default function VoiceTutor() {
         pc.addTrack(track, stream);
       });
 
-      const offer = await pc.createOffer();
+      const offer = await pc.createOffer();      if (pc.iceGatheringState !== 'complete') {
+        await new Promise(resolve => {
+          let finished = false;
+
+          const finish = () => {
+            if (finished) return;
+
+            finished = true;
+
+            pc.removeEventListener(
+              'icegatheringstatechange',
+              checkState
+            );
+
+            sdp: localSdp
+          };
+
+          const checkState = () => {
+            if (pc.iceGatheringState === 'complete') {
+              finish();
+            }
+          };
+
+          pc.addEventListener(
+            'icegatheringstatechange',
+            checkState
+          );
+
+          setTimeout(finish, 5000);
+        });
+      }
+
+      const localSdp =
+        pc.localDescription?.sdp;
+
+      if (!localSdp) {
+        throw new Error(
+          'Não foi possível preparar a conexão de áudio.'
+        );
+      }
 
       await pc.setLocalDescription(offer);
 
