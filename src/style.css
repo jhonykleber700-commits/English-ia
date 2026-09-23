@@ -1,4 +1,4 @@
-*{box-sizing:border-box}
+2*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -141,4 +141,4 @@ nav small{
   .hero h1{
     font-size:34px;
   }
-}2
+}
